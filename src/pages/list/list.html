@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar color='navbarColor'>
+    <ion-title>
+      List
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="refresh()">
+        <ion-icon name="md-refresh"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+	<ion-item *ngFor="let item of items">
+      <ion-icon name="restaurant" item-start color="primary"></ion-icon>
+      <ion-label>{{item[0]}} ({{item[1]}}g)</ion-label>
+      <ion-note style="font-size: 10px;" item-end>{{item[2]}}</ion-note>
+      <button ion-button item-end color="danger" (click)="removeCons(item[0],item[1],item[3])">X</button>
+    </ion-item>
+  </ion-list>
+</ion-content>

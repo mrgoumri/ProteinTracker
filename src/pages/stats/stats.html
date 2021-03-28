@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-navbar color='navbarColor'>
+    <ion-title>
+      Stats
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="refresh()">
+        <ion-icon name="md-refresh"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+  <ion-card>
+	  <ion-card-header>
+	    Last 7 days
+	  </ion-card-header>
+	  <ion-card-content>
+	    <canvas height="200" #last7days></canvas>
+	  </ion-card-content>
+	    <ion-row>
+		  <ion-col>
+
+		  </ion-col>
+		  <ion-col>
+		    
+		  </ion-col>
+		  <ion-col center text-center>
+		    <button ion-button icon-start clear small (click)="refresh()">
+		      <ion-icon name="refresh"></ion-icon>
+		      <div>Refresh</div>
+		    </button>
+		  </ion-col>
+		</ion-row>
+  </ion-card>
+  <ion-card>
+	  <ion-card-header>
+	    Last 3 months
+	  </ion-card-header>
+	  <ion-card-content>
+	    <canvas height="200" #last3month></canvas>
+	  </ion-card-content>
+	  <ion-row>
+		  <ion-col>
+
+		  </ion-col>
+		  <ion-col>
+		    
+		  </ion-col>
+		  <ion-col center text-center>
+		    <button ion-button icon-start clear small (click)="refresh()">
+		      <ion-icon name="refresh"></ion-icon>
+		      <div>Refresh</div>
+		    </button>
+		  </ion-col>
+		</ion-row>
+  </ion-card>
+  <ion-card>
+	  <ion-card-header>
+	    Most consumed
+	  </ion-card-header>
+	  <ion-card-content>
+	    <canvas height="220" #foods></canvas>
+	  </ion-card-content>
+	  <ion-row>
+		  <ion-col>
+
+		  </ion-col>
+		  <ion-col>
+		    
+		  </ion-col>
+		  <ion-col center text-center>
+		    <button ion-button icon-start clear small (click)="refresh()">
+		      <ion-icon name="refresh"></ion-icon>
+		      <div>Refresh</div>
+		    </button>
+		  </ion-col>
+		</ion-row>
+  </ion-card>
+</ion-content>

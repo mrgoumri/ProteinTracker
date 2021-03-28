@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-navbar color='navbarColor'>
+    <ion-title>Protein intake</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="refresh()">
+        <ion-icon name="md-refresh"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+
+    <button navbarColor ion-button block outline><ion-datetime (ngModelChange)="reloadInfos()" displayFormat="YYYY-MM-DD" [(ngModel)]="date_consumption"></ion-datetime></button>
+
+
+  <ion-card>
+    <ion-card-header>
+      <ion-item>
+        <ion-icon name="md-ribbon" item-start></ion-icon>
+        Goal
+        <ion-badge item-end>{{goal}} g</ion-badge>
+      </ion-item>
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #doughnutCanvas></canvas>
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-list>
+    <!-- <ion-list-header>
+        Goal
+        <ion-badge item-end color="secondary">{{goal}}</ion-badge>
+    </ion-list-header> -->
+
+
+    <ion-list-header>
+        Remaining
+        <ion-badge item-end color="danger">{{remaining}} g</ion-badge>
+    </ion-list-header>
+    <ion-item>
+      <ion-range disabled min="0" max="{{goal}}" pin="true" [(ngModel)]="remaining" color="danger">
+        <ion-icon range-left small name="md-clock"></ion-icon>
+        <ion-icon range-right name="md-clock"></ion-icon>
+      </ion-range>
+    </ion-item>
+
+    <ion-list-header>
+        Consumed
+        <ion-badge item-end color="success">{{consumed}} g</ion-badge>
+    </ion-list-header>
+    <ion-item>
+      <ion-range disabled min="0" max="{{goal}}" pin="true" [(ngModel)]="consumed" color="success">
+        <ion-icon range-left small name="md-done-all"></ion-icon>
+        <ion-icon range-right name="md-done-all"></ion-icon>
+      </ion-range>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab right bottom>
+    <button ion-fab color="blue" (click)="setConsum()"><ion-icon name="md-add"></ion-icon></button>
+  </ion-fab>
+</ion-content>

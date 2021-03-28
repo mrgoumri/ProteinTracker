@@ -1,0 +1,7 @@
+{
+  "name": "Protein Counter",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
